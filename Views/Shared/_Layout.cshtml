@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+<title>Educational</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" href="~/Content/layout.css" type="text/css" />
+<script type="text/javascript" src="~/scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="~/scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript" src="~/scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="~/scripts/jquery.tabs.setup.js"></script>
+</head>
+<body>
+<div class="wrapper col0">
+  <div id="topbar">
+    <div id="slidepanel">
+      <div class="topbox">
+         <h2>Admin Login Here</h2>
+        <form action="/Home/AdminLogin" method="post">
+          <fieldset>
+            <legend>Admins Login Form</legend>
+            <label for="adminname">Username:
+              <input type="text" name="adminname" id="adminname" value="" />
+            </label>
+            <label for="adminpass">Password:
+              <input type="password" name="adminpass" id="adminpass" value="" />
+            </label>
+            <label for="adminremember">
+              <input class="checkbox" type="checkbox" name="adminremember" id="adminremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="adminlogin" id="adminlogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="adminrreset" id="adminreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <div class="topbox">
+        <h2>Teachers Login Here</h2>
+        <form action="/Teacher/TeacherLogin" method="post">
+          <fieldset>
+            <legend>Teachers Login Form</legend>
+            <label for="teachername">Username:
+              <input type="text" name="teachername" id="teachername" value="" />
+            </label>
+            <label for="teacherpass">Password:
+              <input type="password" name="teacherpass" id="teacherpass" value="" />
+            </label>
+            <label for="teacherremember">
+              <input class="checkbox" type="checkbox" name="teacherremember" id="teacherremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="teacherlogin" id="teacherlogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="teacherreset" id="teacherreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <div class="topbox last">
+        <h2>Student Login Here</h2>
+        <form action="/Student/StudentLogin" method="post">
+          <fieldset>
+            <legend>Students Login Form</legend>
+            <label for="pupilname">Username:
+              <input type="text" name="studentname" id="studentname" value="" />
+            </label>
+            <label for="pupilpass">Password:
+              <input type="password" name="studentpass" id="studentpass" value="" />
+            </label>
+            <label for="pupilremember">
+              <input class="checkbox" type="checkbox" name="pupilremember" id="pupilremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="pupillogin" id="pupillogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="pupilreset" id="pupilreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <br class="clear" />
+    </div>
+    <div id="loginpanel">
+      <ul>
+        <li class="left">Log In Here &raquo;</li>
+        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">Administration</a><a id="closeit" style="display: none;" href="#slidepanel">Close Panel</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Campus Mangement System</a></h1>
+      
+    </div>
+    <div class="fl_right">
+      <ul>
+        <li class="last"><a href="#">Search</a></li>
+        <li><a href="#">Online Support</a></li>
+        <li><a href="#">School Board</a></li>
+      </ul>
+      <p>Tel: xxxxx xxxxxxxxxx | Mail: info@domain.com</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+    <ul>
+      <li class="active"><a href="/Home/index.html">Home</a>
+       
+      </li>
+      <li><a href="/Home/styledemo">Style Demo</a>
+        
+      </li>
+      
+      <li><a href="#">Our Services</a></li>
+      <li class="last"><a href="#">Long Link Text</a></li>
+    </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="featured_slide">
+    <div id="featured_wrap">
+      <ul id="featured_tabs">
+        <li><a href="#fc1">College Lab<br />
+         
+        <li><a href="#fc2">Sports<br />
+          
+        <li><a href="#fc3">Library<br />
+         
+        <li class="last"><a href="#fc4">New Campus<br />
+         
+      </ul>
+      <div id="featured_content">
+        <div class="featured_box" id="fc1"><img src="~/images/1.jpg" alt="" />
+          <div class="floater"><a href="#">Continue Reading &raquo;</a></div>
+        </div>
+        <div class="featured_box" id="fc2"><img src="~/images/3.jpg" alt="" />
+          <div class="floater"><a href="#">Continue Reading &raquo;</a></div>
+        </div>
+        <div class="featured_box" id="fc3"><img src="~/images/4.jpg" alt="" />
+          <div class="floater"><a href="#">Continue Reading &raquo;</a></div>
+        </div>
+        <div class="featured_box" id="fc4"><img src="~/images/2.jpg" alt="" />
+          <div class="floater"><a href="#">Continue Reading &raquo;</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    @RenderBody()
+    <div class="wrapper col5">
+  <div id="footer">
+    <div id="newsletter">
+      <h2>Stay In The Know !</h2>
+      <p>Please enter your email to join our mailing list</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>News Letter</legend>
+          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+          <input type="submit" name="news_go" id="news_go" value="GO" />
+        </fieldset>
+      </form>
+      <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
+    </div>
+    <div class="footbox">
+     
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col6">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

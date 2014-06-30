@@ -1,0 +1,112 @@
+
+<!-- ####################################################################################################### -->
+@model EADProjectUpdated.Models.Teacher
+    <html>
+<head>
+     <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+<title>Add Teacher</title>
+<style type="text/css">
+h3{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight: bold; color:maroon;
+text-align: center; text-decoration: underline }
+table{font-family: Calibri; color:white; font-size: 11pt; font-style: normal;
+text-align:; background-color: maroon; border-collapse: collapse; border: 2px solid navy}
+table.inner{border: 0px}
+</style>
+
+    <a href="~/Views/Home/AddTeacher.cshtml">~/Views/Home/AddTeacher.cshtml</a>
+   
+</head>
+ 
+<body>
+<h3>ADD Teacher</h3>
+@using (Html.BeginForm("AddTeacher", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+     <table align="center" cellpadding = "10">
+        <tr>
+<td>@Html.Label("","Name")</td>
+ <td>  @Html.TextBoxFor(x=>x.Name, new{type="text",maxlength="30"})</td>
+      <td> @Html.ValidationMessageFor(x=>x.Name)</td>
+@*<td><input type="text" name="Name" maxlength="30" id="name"/>
+(max 30 characters a-z and A-Z)
+</td>*@
+<td><input type="button" value="Check Availibility" onclick="f1()"/></td>
+</tr>
+ 
+<!----- Designation ---------------------------------------------------------->
+<tr>
+<td>Designation</td>
+    <td>  @Html.TextBoxFor(x=>x.Designation, new{type="text",maxlength="30"})</td>
+@*<td><input type="text" name="Rollnumber" maxlength="30" id="designation"/>
+(max 30 characters a-z and A-Z)
+</td>*@
+</tr>
+             <!----- Salary ---------------------------------------------------------->
+<tr>
+<td>Salary</td>
+    <td>  @Html.TextBoxFor(x=>x.Salary, new{type="text",maxlength="30"})</td>
+@*<td><input type="text" name="Rollnumber" maxlength="30" id="rollnumber"/>
+(max 30 characters a-z and A-Z)
+</td>*@
+</tr>
+
+
+
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID</td>
+    <td>  @Html.TextBoxFor(x=>x.EmailID, new{type="text",maxlength="30"})</td>
+ <td> @Html.ValidationMessageFor(x=>x.EmailID)</td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER</td>
+    <td>  @Html.TextBoxFor(x=>x.MobileNumber, new{type="text",maxlength="30"})</td>
+     <td> @Html.ValidationMessageFor(x=>x.MobileNumber)</td>
+
+</tr>
+
+         <tr>
+<td>ADDRESS <br /><br /><br /></td>
+    <td>  @Html.TextBoxFor(x=>x.Address, new{type="text",maxlength="30"})</td>
+@*<td><textarea name="Address" rows="4" cols="30"></textarea></td>*@
+</tr>
+ 
+         <tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+
+
+ 
+     </table>
+}
+    <li>@Html.ActionLink("Logout", "Index", "Home")</li>
+
+  <script>
+      function f1() {
+          $.getJSON("/Home/checkUserName?u=" + $('#Name').val(), function (x) {
+
+              if (x) {
+                  alert("Availiable");
+              }
+              else {
+                  alert("Not availiable");
+              }
+          });
+      }
+         </script>
+
+</body>
+</html>
+<!-- ####################################################################################################### -->
